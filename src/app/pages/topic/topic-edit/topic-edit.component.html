@@ -1,0 +1,25 @@
+<form nz-form [formGroup]="frmGroup" nzLayout="vertical">
+  
+  <div class="form-group">
+    <label for="code">Mã chủ đề:</label>
+    <input type="number" >
+  </div>
+
+  <div class="form-group">
+    <label for="name">Tên chủ đề:</label>
+    <input type="text" >
+  </div>
+
+  <div class="form-group">  
+    <label for="description">Mô tả:</label>
+    <textarea id="description" name="description" rows="4"></textarea>
+  </div>
+
+  
+
+
+  <div *nzModalFooter>
+    <button nz-button nzType="default" (click)="onSave()">Lưu</button>
+    <button nz-button nzType="primary" (click)="onExit()">Thoất</button>
+  </div>
+</form>

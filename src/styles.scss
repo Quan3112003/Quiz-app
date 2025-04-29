@@ -1,0 +1,6 @@
+::ng-deep .cdk-global-overlay-wrapper > .cdk-overlay-pane > .ant-notification {
+  top: 74px !important; /* reset notification bên trong */
+}
+::ng-deep .cdk-global-overlay-wrapper > .cdk-overlay-pane {
+  top: 74px !important; /* chỉ ảnh hưởng notification */
+}
