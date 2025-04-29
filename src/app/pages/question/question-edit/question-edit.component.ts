@@ -16,6 +16,7 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { QuestionService } from '../../../services/question.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-question-edit',
@@ -46,12 +47,17 @@ import { QuestionService } from '../../../services/question.service';
 })
 export class QuestionEditComponent implements OnInit {
   lstTopic = [];
-  constructor(private _questionService: QuestionService) {}
-
+  constructor(private _fb: FormBuilder,private _questionService: QuestionService) {}
+  frmGroup: any;
   ngOnInit() {
     this.getSelectTopic();
+    this.initForm();
   }
-
+  initForm() {
+    this.frmGroup = this._fb.group({
+      
+    });
+  }
   getSelectTopic() {
     return this._questionService.getSelectTopic().subscribe((rs) => {
       console.log(rs);

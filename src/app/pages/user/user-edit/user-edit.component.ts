@@ -11,7 +11,9 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
-import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzModalModule,
+          NzModalRef
+} from 'ng-zorro-antd/modal';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
@@ -52,7 +54,7 @@ export class UserEditComponent implements OnInit {
   frmGroup: any;
   passwordVisible = false;
 
-  constructor(private _fb: FormBuilder, private _toastService: ToastService) {}
+  constructor(private _fb: FormBuilder, private _toastService: ToastService,private _modalRef: NzModalRef) {}
 
   ngOnInit() {
     this.initForm();
@@ -78,5 +80,7 @@ export class UserEditComponent implements OnInit {
     console.log(this.frmGroup.value);
   }
 
-  onExit() {}
+  onExit() {
+    this._modalRef.close();
+  }
 }
